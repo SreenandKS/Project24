@@ -2,11 +2,10 @@ class Paper {
   constructor(x, y,radius) {
     var options = {
         isStatic:false,
-        restitution:0.3,
-        friction:0.5,
-        density:1.2
+        density:1,
+        restitution:0
     }
-    this.body = Matter.Bodies.circle(x, y, radius,{ options});
+    this.body = Matter.Bodies.circle(x, y,radius,options);
     this.radius = radius/2;
     this.x = x;
     this.y = y;
@@ -26,7 +25,7 @@ display(){
   // stroke("purple");
   // fill("green");
   // rect(0, 0, this.width, this.height);
-  image(this.img,0,0,this.radius,this.radius);
+  image(this.img,10,0,this.radius,this.radius);
   pop();
   
 }
